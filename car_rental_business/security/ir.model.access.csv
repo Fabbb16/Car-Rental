@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wb_gift,wb.gift,model_wb_gift,base.group_user,1,1,1,1
+access_wb_order,wb.order,model_wb_order,base.group_user,1,1,1,1
+access_wb_review,wb.review,model_wb_review,base.group_user,1,1,1,1

@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <template id="gifts_template" name="Gifts">
+            <t t-call="website.layout">
+                <div class="container">
+                    <h1>Gifts</h1>
+                    <t t-if="gifts">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Gift Id</th>
+                                    <th>Gift Name</th>
+                                    <th>Gift Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="gifts" t-as="gift">
+                                    <tr>
+                                        <td><t t-esc="gift.id"/></td>
+                                        <td><t t-esc="gift.name"/></td>
+                                        <td><t t-esc="gift.description"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<odoo>
+    <template id="order_form_template" name="Order Form">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Create a New Order</h1>
+                <form action="/orders/create" method="POST">
+                    <div class="form-group">
+                        <label for="car_id">Car</label>
+                        <select name="car_id" id="car_id" required="required">
+                            <t t-foreach="request.env['fleet.vehicle'].sudo().search([])" t-as="car">
+                                <option t-att-value="car.id" t-esc="car.name_get()[0][1]"/>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gift_id">Gift</label>
+                        <select name="gift_id" id="gift_id" required="required">
+                            <t t-foreach="request.env['wb.gift'].sudo().search([])" t-as="gift">
+                                <option t-att-value="gift.id" t-esc="gift.name"/>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="order_date">Order Date</label>
+                        <input type="date" name="order_date" id="order_date" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select name="status" id="status" required="required">
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                    <t t-set="user" t-value="request.env.user"/>
+                    <input type="hidden" name="con" t-att-value="user.partner_id.id"/>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

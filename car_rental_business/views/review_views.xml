@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="wb_review_tree_view" model="ir.ui.view">
+            <field name="name">wb_review.tree.view</field>
+            <field name="model">wb.review</field>
+            <field name="arch" type="xml">
+                <tree string="Review">
+                    <field name="contact"/>
+                    <field name="rating"/>
+                    <field name="comment"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wb_review_form_view" model="ir.ui.view">
+            <field name="name">wb.review.form.model</field>
+            <field name="model">wb.review</field>
+            <field name="arch" type="xml">
+                <form string="Review">
+                    <group>
+                        <group>
+                            <field name="contact"/>
+                            <field name="car_id"/>
+                            <field name="rating"/>
+                            <field name="comment"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="wb_review_action" model="ir.actions.act_window">
+            <field name="name">Review</field>
+            <field name="res_model">wb.review</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="wb_review_root_menu"
+                  name="Review"
+        />
+
+        <menuitem id="wb_review_sub_menu"
+                  name="Lista"
+                  parent="wb_review_root_menu"
+        />
+
+        <menuitem id="wb_review_menu"
+                  action="wb_review_action"
+                  name="Lista e Review-ve"
+                  parent="wb_review_sub_menu"
+        />
+
+    </data>
+</odoo>

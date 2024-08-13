@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record id="wb_gift_tree_view" model="ir.ui.view">
+            <field name="name">wb.gift.tree</field>
+            <field name="model">wb.gift</field>
+            <field name="arch" type="xml">
+                <tree string="Dhurata">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wb_gift_form_view" model="ir.ui.view">
+            <field name="name">wb.gift.form.view</field>
+            <field name="model">wb.gift</field>
+            <field name="arch" type="xml">
+                <form string="Dhurata">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="wb_gift_action" model="ir.actions.act_window">
+            <field name="name">Dhurata</field>
+            <field name="res_model">wb.gift</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="wb_gift_root_menu"
+                  name="Dhurata"
+        />
+
+        <menuitem id="wb_gift_sub_menu"
+                  name="Lista"
+                  parent="wb_gift_root_menu"
+        />
+
+        <menuitem id="wb_gift_menu"
+                  action="wb_gift_action"
+                  name="Lista dhuratave"
+                  parent="wb_gift_sub_menu"
+        />
+
+
+    </data>
+</odoo>

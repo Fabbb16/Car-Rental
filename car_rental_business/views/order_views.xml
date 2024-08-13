@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <record id="wb_order_tree_view" model="ir.ui.view">
+            <field name="name">wb.order.tree.view</field>
+            <field name="model">wb.order</field>
+            <field name="arch" type="xml">
+                <tree string="Porosite">
+                    <field name="car_id"/>
+                    <field name="gift_id"/>
+                    <field name="contact"/>
+                    <field name="order_date"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wb_order_form_view" model="ir.ui.view">
+            <field name="name">wb.order.form.view</field>
+            <field name="model">wb.order</field>
+            <field name="arch" type="xml">
+                <form string="Porosite">
+                    <group>
+                        <group>
+                            <field name="car_id"/>
+                            <field name="gift_id"/>
+                            <field name="contact"/>
+                            <field name="order_date"/>
+                            <field name="status"/>
+                            <field name="con"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="wb_order_action" model="ir.actions.act_window">
+            <field name="name">Porosite</field>
+            <field name="res_model">wb.order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="wb_order_root_menu"
+                  name="Porosite"
+        />
+
+        <menuitem id="wb_order_sub_menu"
+                  name="Lista"
+                  parent="wb_order_root_menu"
+        />
+
+        <menuitem id="wb_order_menu"
+                  action="wb_order_action"
+                  name="Lista Porosive"
+                  parent="wb_order_sub_menu"
+        />
+
+    </data>
+</odoo>
